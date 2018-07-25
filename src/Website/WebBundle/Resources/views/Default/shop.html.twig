@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<title>{{ category }} - {{ WebInfos.0.webtitle }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% stylesheets '@WebBundle/Resources/assets/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endstylesheets %}
+<body class="w3-content" style="max-width:1200px">
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>{{ WebInfos.0.webtitle }}</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a class="w3-button w3-block w3-white w3-left-align">
+      {{ category }} <i class="fa fa-caret-down"></i>
+    </a>
+    {% for name in categories %}
+      {% if name != category %}
+        <a href="/shop/{{ name }}" class="w3-bar-item w3-button">{{ name }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">{{ WebInfos.0.webtitle }}</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">{{ category }}</p>
+    <p class="w3-right">
+      {% if app.user %}
+        <a><i>Hello {{ app.user.username }} !</i></a>
+      {% endif %}
+      <a href="/basket"><i class="fa fa-shopping-cart w3-margin-right"></i></a>
+      <a href="/login"><i class="fa fa-sign-in"></i></a>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="https://www.aspect.com/globalassets/images/hero-developers-categorypg-1200x435.jpg" alt="{{ categories |first }}" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals of {{ category }}</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals of {{ category }}</h1>
+      <h1 class="w3-hide-small">COLLECTION 2018</h1>
+      <p><a class="w3-button w3-black w3-padding-large w3-large">HIRE NOW</a></p>
+    </div>
+  </div>
+  <div class="w3-container w3-text-grey" id="{{ category }}">
+    <p>{{ products|length }} items</p>
+  </div>
+{% if products|length == 0 %}
+<h1> There is no {{ category }} for the moment </h1>
+{% endif %}
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+{% for product in products %}
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <a href="/shop/{{ category }}/{{ product.id }}"><img src="{{ product.img ?: "https://d30y9cdsu7xlg0.cloudfront.net/png/1095867-200.png" }}" style="width:100%">
+        <p>{{ product.name }}<br><b>{{ product.price|number_format(0, ',') }}$</b></p></a>
+      </div>
+    </div>
+{% endfor %}
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get the new products :</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+
+  {% embed('@WebBundle/Resources/views/footer.html.twig') %}
+  {% endembed %}
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a target="_blank" class="w3-hover-opacity">Uppler</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+{% block javascripts %}
+    {% javascripts '@WebBundle/Resources/assets/js/MyJs.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock javascripts %}
+
+</body>
+</html>

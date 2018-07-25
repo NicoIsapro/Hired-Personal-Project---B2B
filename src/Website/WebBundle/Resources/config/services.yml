@@ -1,0 +1,9 @@
+parameters:
+    handler.loginhandler.class: Website\WebBundle\Security\Authentication\Handler\LoginSuccessHandler
+
+services:
+    login_success_handler:
+        class:      %handler.loginhandler.class%
+        arguments:  [@router, @security.context]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

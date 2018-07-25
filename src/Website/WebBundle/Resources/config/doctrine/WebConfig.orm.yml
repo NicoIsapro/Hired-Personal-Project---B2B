@@ -1,0 +1,27 @@
+Website\WebBundle\Entity\WebConfig:
+    type: entity
+    table: web_config
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        webTitle:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: web_title
+        tags:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

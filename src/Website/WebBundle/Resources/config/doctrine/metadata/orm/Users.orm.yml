@@ -1,0 +1,55 @@
+Users:
+    type: entity
+    table: users
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        password:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        surname:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        name:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        email:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        created:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        roles:
+          type: text
+          nullable: false
+          length: 65535
+          options:
+              fixed: false
+    lifecycleCallbacks: {  }

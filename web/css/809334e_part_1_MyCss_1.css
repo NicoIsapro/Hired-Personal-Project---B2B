@@ -1,0 +1,36 @@
+.w3-sidebar a {
+  font-family: "Roboto", sans-serif
+}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {
+  font-family: "Montserrat", sans-serif
+;}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.add-to-cart-btn{
+  background-color: #23c100;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  float: right!important;
+}
+
+/* Darker background on mouse-over */
+.add-to-cart-btn:hover {
+  background-color: #4ff506;
+}

@@ -1,0 +1,24 @@
+Website\WebBundle\Entity\Cart:
+    type: entity
+    table: cart
+    id:
+        userid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        prodid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        created:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }
