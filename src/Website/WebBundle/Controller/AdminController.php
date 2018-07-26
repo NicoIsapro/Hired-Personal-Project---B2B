@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
   public function CountTopCompany()
   {
@@ -69,7 +69,7 @@ class adminController extends Controller
     ;
     return $repository->findAll();
   }
-  public function adminAction(Request $request)
+  public function AdminAction(Request $request)
   {
     if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
       throw new AccessDeniedException('Access denied for clients');
@@ -81,7 +81,7 @@ class adminController extends Controller
     $NumOrdersWeek = $this->CountOrdersWeek();
     $TopCompanies  = $this->CountTopCompany();
     $users  = $this->RetrieveUsers();
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/admin.html.twig', array(
+    return $this->render('@WebBundle/Resources/views/Default/admin.html.twig', array(
         'WebInfos'      => $WebInfos,
         'products'      => $products,
         'orders'        => $orders,

@@ -20,7 +20,7 @@ class Users implements UserInterface, \Serializable
      *
      * @ORM\Column(name="company", type="text", length=65535, nullable=true)
      */
-     public $company;
+     private $company;
     /**
      * @var string
      *
@@ -33,7 +33,7 @@ class Users implements UserInterface, \Serializable
      *
      * @ORM\Column(name="username", type="text", length=65535, nullable=false)
      */
-    public $username;
+    private $username;
 
     /**
      * @var string
@@ -47,21 +47,21 @@ class Users implements UserInterface, \Serializable
      *
      * @ORM\Column(name="surname", type="text", length=65535, nullable=false)
      */
-    public $surname;
+    private $surname;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="text", length=65535, nullable=false)
      */
-    public $name;
+    private $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="text", length=65535, nullable=false)
      */
-    public $email;
+    private $email;
 
     /**
      * @var \DateTime
@@ -84,19 +84,16 @@ class Users implements UserInterface, \Serializable
     // may not be needed, see section on salt below
     // $this->salt = md5(uniqid('', true));
     }
-
-    public function getUsername()
-    {
-      return $this->username;
-    }
-
     public function getSalt()
     {
     // you *may* need a real salt depending on your encoder
     // see section on salt below
       return null;
     }
-
+    public function getRoles()
+    {
+      return array($this->roles);
+    }
     public function getPassword()
     {
       return $this->password;
@@ -104,6 +101,22 @@ class Users implements UserInterface, \Serializable
     public function getSurname()
     {
       return $this->surname;
+    }
+    public function getCompany()
+    {
+      return $this->company;
+    }
+    public function getUsername()
+    {
+      return $this->username;
+    }
+    public function getName()
+    {
+      return $this->name;
+    }
+    public function getEmail()
+    {
+      return $this->email;
     }
     public function setPassword($password)
     {
@@ -133,11 +146,6 @@ class Users implements UserInterface, \Serializable
      {
          $this->email = $email;
      }
-    public function getRoles()
-    {
-      return array($this->roles);
-    }
-
     public function eraseCredentials()
     {
     }

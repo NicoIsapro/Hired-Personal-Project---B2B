@@ -17,7 +17,7 @@ class BasketController extends Controller
   {
     $WebInfos = $this->RetrieveWebInfos();
 
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/basket.html.twig', array(
+    return $this->render('@WebBundle/Resources/views/Default/basket.html.twig', array(
         'WebInfos'      => $WebInfos,
     ));
   }

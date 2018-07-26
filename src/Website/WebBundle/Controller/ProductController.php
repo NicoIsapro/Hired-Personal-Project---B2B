@@ -35,8 +35,11 @@ class ProductController extends Controller
     $WebInfos = $this->RetrieveWebInfos();
     $Categories = $this->RetrieveCategories();
     $product = $this->RetrieveProduct($prodid);
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/product.html.twig',
-   array('WebInfos' => $WebInfos, 'categories' => $Categories, 'category' => $categ, 'product' => $product)
+    return $this->render('@WebBundle/Resources/views/Default/product.html.twig', array(
+      'WebInfos' => $WebInfos,
+      'categories' => $Categories,
+      'category' => $categ,
+      'product' => $product)
   );
  }
 }

@@ -1,9 +1,11 @@
 parameters:
     handler.loginhandler.class: Website\WebBundle\Security\Authentication\Handler\LoginSuccessHandler
-
+    # handler.oauth.user_provider.class: Website\WebBundle\OAuth\UserProvider
 services:
     login_success_handler:
         class:      %handler.loginhandler.class%
         arguments:  [@router, @security.context]
         tags:
             - { name: 'monolog.logger', channel: 'security' }
+    # oauth_user_provider:
+    #   class:    %handler.oauth.user_provider.class%

@@ -71,3 +71,12 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
            cssrewrite: ~
+# LinkedIn auth
+# hwi_oauth:
+#     firewall_names: [main]
+#     resource_owners:
+#         any_name:
+#             type:           linkedin
+#             client_id:      771az3nuhmfccq
+#             client_secret:  rIMAgNByWKAdCEWx
+#             scope:          r_basicprofile, r_emailaddress, rw_company_admin

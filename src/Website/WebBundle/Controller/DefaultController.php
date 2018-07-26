@@ -44,8 +44,11 @@ class DefaultController extends Controller
     $WebInfos = $this->RetrieveWebInfos();
     $Categories = $this->RetrieveCategories();
     $products = $this->RetrieveProducts($slug);
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/shop.html.twig',
-   array('WebInfos' => $WebInfos, 'categories' => $Categories, 'products' => $products, 'category' => $slug)
-  );
+    return $this->render('@WebBundle/Resources/views/Default/shop.html.twig', array(
+      'WebInfos' => $WebInfos,
+      'categories' => $Categories,
+      'products' => $products,
+      'category' => $slug
+  ));
  }
 }

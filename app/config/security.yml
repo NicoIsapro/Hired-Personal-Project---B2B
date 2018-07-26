@@ -37,6 +37,13 @@ security:
             logout:
               path: /logout
               target: /
+            # oauth:
+            #   resource_owners:
+            #       linkedin: "/auth/linkedin/callback"
+            #   login_path: /login
+            #   failure_path: /login
+            #   oauth_user_provider:
+            #       service: oauth_user_provider
     role_hierarchy:
       ROLE_CLIENT:      ROLE_USER
       ROLE_ADMIN:       ROLE_USER

@@ -1,3 +1,11 @@
+order:
+    resource: "@OrderBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /

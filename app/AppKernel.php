@@ -8,6 +8,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+            // new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -19,6 +20,8 @@ class AppKernel extends Kernel
             new Website\WebBundle\WebBundle(),
 	    new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Website\AdministratorBundle\AdminBundle(),
+            new Website\UserBundle\UserBundle(),
+            new Website\OrderBundle\OrderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'webtest'), true)) {

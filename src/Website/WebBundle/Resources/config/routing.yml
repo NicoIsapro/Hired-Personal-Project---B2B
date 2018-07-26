@@ -4,42 +4,70 @@ root:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: /shop/Developer
         permanent: true
+
 web_shop:
     path:     /shop/{slug}
-    defaults: { _controller: WebBundle:Default:index }
+    defaults: { _controller: WebBundle:Default:Index }
+
 shop_product:
     path:     /shop/{categ}/{prodid}
     defaults: { _controller: WebBundle:Product:Product }
+
 login:
     path:     /login
-    defaults: { _controller: WebBundle:Login:login }
+    defaults: { _controller: WebBundle:Login:Login }
+#
+# linkedin_auth:
+#     path: /auth/linkedin/callback
+#
+# hwi_oauth_redirect:
+#     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+#     prefix:   /connect
+#
+# hwi_oauth_connect:
+#     resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+#     prefix:   /connect
+#
+# hwi_oauth_login:
+#     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+#     prefix:   /login
+
 admin:
-  path:       /admin
-  defaults: { _controller: WebBundle:admin:admin }
+    path:       /admin
+    defaults: { _controller: WebBundle:Admin:Admin }
+
 clients:
-  path:       /clients
-  defaults: { _controller: WebBundle:Clients:clients }
+    path:       /clients
+    defaults: { _controller: WebBundle:Clients:Clients }
+
 logout_page:
     path:   /logout
-    defaults:  { _controller: WebBundle:Logout:logout }
+    defaults:  { _controller: WebBundle:Logout:Logout }
+
 signup_page:
-  path:  /signup
-  defaults: { _controller: WebBundle:Signup:signup }
+    path:  /signup
+    defaults: { _controller: WebBundle:Signup:Signup }
+
 basket:
-  path:  /basket
-  defaults: { _controller: WebBundle:Basket:basket }
+    path:  /basket
+    defaults: { _controller: WebBundle:Basket:Basket }
+
 export_csv:
-  path:  /orders/export/csv
-  defaults: { _controller: WebBundle:CSVExport:ExportCSV }
+    path:  /orders/export/csv
+    defaults: { _controller: WebBundle:CSVExport:ExportCSV }
+
 export_json:
-  path:  /orders/export/json
-  defaults: { _controller: WebBundle:JSONExport:ExportJSON }
+    path:  /orders/export/json
+    defaults: { _controller: WebBundle:JSONExport:ExportJSON }
+
 admin_users:
-  path: /admin/users
-  defaults: { _controller: WebBundle:adminUsers:adminUsers}
+    path: /admin/users
+    defaults: { _controller: WebBundle:AdminUsers:AdminUsers}
+
 admin_webset:
-  path: /admin/websettings
-  defaults: { _controller: WebBundle:adminWebset:adminWebset}
+    path: /admin/websettings
+    defaults: { _controller: WebBundle:AdminWebset:AdminWebset}
+
 admin_profile:
-  path: /admin/profile
-  defaults: { _controller: WebBundle:adminProfile:adminProfile}
+    path: /admin/profile
+    defaults: { _controller: WebBundle:AdminProfile:AdminProfile}

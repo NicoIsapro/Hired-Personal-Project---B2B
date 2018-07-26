@@ -17,14 +17,14 @@ class WebConfig
      *
      * @ORM\Column(name="web_title", type="text", length=65535, nullable=false)
      */
-    public $webTitle;
+    private $webTitle;
 
     /**
      * @var string
      *
      * @ORM\Column(name="tags", type="text", length=65535, nullable=false)
      */
-    public $tags;
+    private $tags;
 
     /**
      * @var integer

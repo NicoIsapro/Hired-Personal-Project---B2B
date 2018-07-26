@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-class adminProfileController extends Controller
+class AdminWebsetController extends Controller
 {
   public function RetrieveUsers()
   {
@@ -22,14 +22,14 @@ class adminProfileController extends Controller
     ;
     return $repository->findAll();
   }
-  public function adminProfileAction(Request $request)
+  public function AdminWebsetAction(Request $request)
   {
     if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
       throw new AccessDeniedException('Access denied for clients');
     }
     $WebInfos = $this->RetrieveWebInfos();
     $users  = $this->RetrieveUsers();
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/adminProfile.html.twig', array(
+    return $this->render('@WebBundle/Resources/views/Default/adminWebset.html.twig', array(
         'WebInfos'      => $WebInfos,
         'users'         => $users,
     ));

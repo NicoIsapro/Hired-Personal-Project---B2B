@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LogoutController extends Controller
 {
-  public function logoutAction()
+  public function LogoutAction()
   {
     $request = $this->getRequest();
     $session = $request->getSession();

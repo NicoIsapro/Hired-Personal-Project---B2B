@@ -66,7 +66,7 @@ class ClientsController extends Controller
     ;
     return $repository;
   }
-  public function clientsAction(Request $request)
+  public function ClientsAction(Request $request)
   {
     if (!$this->get('security.authorization_checker')->isGranted('ROLE_CLIENT')) {
       throw new AccessDeniedException('Access restricted for clients only');
@@ -79,7 +79,7 @@ class ClientsController extends Controller
     $ordersClient = $this->RetrieveOrders($username);
     $OrdersWeek   = $this->CountOrdersWeek($username);
     $users = $this->RetrieveUsers();
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/client.html.twig', array(
+    return $this->render('@WebBundle/Resources/views/Default/client.html.twig', array(
         'products'      => $products,
         'WebInfos'      => $WebInfos,
         'categories'    => $categories,

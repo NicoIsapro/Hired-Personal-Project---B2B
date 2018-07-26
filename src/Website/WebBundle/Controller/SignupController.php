@@ -16,7 +16,7 @@ class SignupController extends Controller
     ;
     return $repository->findAll();
   }
-  public function signupAction(Request $request)
+  public function SignupAction(Request $request)
   {
     $user = new Users();
     $form = $this->createForm(UserRegistrationForm::class, $user);
@@ -38,7 +38,7 @@ class SignupController extends Controller
     }
 
     $WebInfos = $this->RetrieveWebInfos();
-    return $this->render('/home/nicoisapro/my_site_28/src/Website/WebBundle/Resources/views/Default/signup.html.twig', array(
+    return $this->render('@WebBundle/Resources/views/Default/signup.html.twig', array(
         'WebInfos'      => $WebInfos,
         'form' => $form->createView(),
     ));

@@ -17,35 +17,35 @@ class Products
      *
      * @ORM\Column(name="name", type="text", length=65535, nullable=false)
      */
-    public $name;
+    private $name;
 
     /**
      * @var float
      *
      * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=false)
      */
-    public $price;
+    private $price;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="categid", type="integer", nullable=false)
      */
-    public $categid;
+    private $categid;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text", length=65535, nullable=false)
      */
-    public $description;
+    private $description;
 
     /**
      * @var string
      *
      * @ORM\Column(name="img", type="text", length=65535, nullable=true)
      */
-    public $img;
+    private $img;
 
     /**
      * @var integer
@@ -54,11 +54,155 @@ class Products
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
+
     public function __toString()
     {
       return $this->name;
     }
 
-}
 
+    /**
+     * Get the value of Name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set the value of Name
+     *
+     * @param string name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Price
+     *
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set the value of Price
+     *
+     * @param float price
+     *
+     * @return self
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Categid
+     *
+     * @return integer
+     */
+    public function getCategid()
+    {
+        return $this->categid;
+    }
+
+    /**
+     * Set the value of Categid
+     *
+     * @param integer categid
+     *
+     * @return self
+     */
+    public function setCategid($categid)
+    {
+        $this->categid = $categid;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the value of Description
+     *
+     * @param string description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Img
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * Set the value of Img
+     *
+     * @param string img
+     *
+     * @return self
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of Id
+     *
+     * @param integer id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+}
