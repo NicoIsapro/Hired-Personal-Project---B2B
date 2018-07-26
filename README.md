@@ -22,3 +22,5 @@ Actually in development, Hired is only a test to learn how work Symfony...
 - Improve functional tests
 - Improve MVC
 - Improve SQL Requests
+- Split in bundles
+- Split function of controllers
