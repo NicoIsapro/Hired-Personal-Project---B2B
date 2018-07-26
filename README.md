@@ -9,11 +9,11 @@ Actually in development, Hired is only a test to learn how work Symfony...
 2. execute : composer install
 3. execute : php app/console server:start
 
-### TODO
+### ~ TODO ~
 
 - Message bundle to interact between buyers/products (Need to implement the FOSUserBundle)
 - Shopping cart + payment methods
-- Admin panel settings --> treat post requests
+- Admin panel settings --> Backend
 - Client panel settings
 - Product panel (import his resume, modify his description and approved/denied job requests)
 - Profile pics for users
@@ -22,3 +22,5 @@ Actually in development, Hired is only a test to learn how work Symfony...
 - Improve functional tests
 - Improve MVC
 - Improve SQL Requests
+- Split in bundles
+- Split function of controllers
