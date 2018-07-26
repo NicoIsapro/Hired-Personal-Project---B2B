@@ -9,6 +9,12 @@ Actually in development, Hired is only a test to learn how work Symfony...
 2. execute : composer install
 3. execute : php app/console server:start
 
+### Logins
+
+admin account : - jean.onche:michel
+
+buyer accout  : - michel.dubois:test
+
 ### ~ TODO ~
 
 - Message bundle to interact between buyers/products (Need to implement the FOSUserBundle)
@@ -24,3 +30,7 @@ Actually in development, Hired is only a test to learn how work Symfony...
 - Improve SQL Requests
 - Split in bundles
 - Split function of controllers
+- Data history graph (back office)
+
+### WIP
+-LinkedIn auth with HWIO
