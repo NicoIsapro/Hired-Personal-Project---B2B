@@ -12,6 +12,7 @@ Actually in development, Hired is only a test to learn how work Symfony...
 ### Logins
 
 admin account : - jean.onche:michel
+
 buyer accout  : - michel.dubois:test
 
 ### ~ TODO ~
