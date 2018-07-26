@@ -1,0 +1,158 @@
+<!-- HEADER MOBILE-->
+<header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+        <div class="container-fluid">
+            <div class="header-mobile-inner">
+                <a class="logo">
+                    <h1>{{ WebInfos.0.webtitle }} Panel</h1>
+                </a>
+                <button class="hamburger hamburger--slider" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-mobile">
+        <div class="container-fluid">
+            <ul class="navbar-mobile__list list-unstyled">
+              <li>
+                  <a href="/admin/users">
+                      <i class="fas fa-users"></i>Users Settings</a>
+              </li>
+              <li>
+                  <a href="/admin/websettings">
+                      <i class="fas fa-cogs"></i>Website Settings</a>
+              </li>
+              <li>
+                  <a href="/admin/messages">
+                      <i class="fas fa-envelope"></i>Messages</a>
+              </li>
+              <li>
+                  <a href="/admin/profile">
+                      <i class="fas fa-user"></i>My profile</a>
+              </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- END HEADER MOBILE-->
+
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <h1> {{ WebInfos.0.webtitle }} Panel </h1>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li>
+                    <a href="/admin/users">
+                        <i class="fas fa-users"></i>Users Settings</a>
+                </li>
+                <li>
+                    <a href="/admin/websettings">
+                        <i class="fas fa-cogs"></i>Website Settings</a>
+                </li>
+                <li>
+                    <a href="/admin/messages">
+                        <i class="fas fa-envelope"></i>Messages</a>
+                </li>
+                <li>
+                    <a href="/admin/profile">
+                        <i class="fas fa-user"></i>My profile</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!-- END MENU SIDEBAR-->
+
+<!-- PAGE CONTAINER-->
+<div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="header-wrap">
+                    <form class="form-header" action="" method="POST">
+                        <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                        <button class="au-btn--submit" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                    <div class="header-button">
+                        <div class="noti-wrap">
+                            <div class="noti__item js-item-menu">
+                                <i class="zmdi zmdi-comment-more"></i>
+                                <span class="quantity">0</span>
+                                <div class="mess-dropdown js-dropdown">
+                                    <div class="mess__title">
+                                        <p>You have 0 news message</p>
+                                    </div>
+                                    <div class="mess__footer">
+                                        <a href="#">View all messages</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="noti__item js-item-menu">
+                                <i class="zmdi zmdi-notifications"></i>
+                                <span class="quantity">0</span>
+                                <div class="notifi-dropdown js-dropdown">
+                                    <div class="notifi__title">
+                                        <p>You have 0 Notifications</p>
+                                    </div>
+                                    <div class="notifi__footer">
+                                        <a href="#">All notifications</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="../images/icon/avatar-01.jpg" alt="{{ app.user.username }}" />
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">{{ app.user.username }}</a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="../images/icon/avatar-01.jpg" alt="{{ app.user.username }}" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#">{{ app.user.username }}</a>
+                                            </h5>
+                                            <span class="email">{% for user in users %}{% if user.username == app.user.username %}{{ user.email }}{% endif %}{% endfor %}</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-settings"></i>Settings</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a href="{{ logout_path(key = null) }}">
+                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER DESKTOP-->
