@@ -31,3 +31,6 @@ buyer accout  : - michel.dubois:test
 - Split in bundles
 - Split function of controllers
 - Data history graph (back office)
+
+### WIP
+-LinkedIn auth with HWIO
