@@ -23,6 +23,7 @@ class SignupController extends Controller
 
     $form->handleRequest($request);
     $form->getErrors();
+
     if ($form->isSubmitted() && $form->isValid()) {
       $password = $this->get('security.password_encoder')
         ->encodePassword($user, $user->getPassword());

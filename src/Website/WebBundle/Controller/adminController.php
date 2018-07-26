@@ -10,7 +10,9 @@ class adminController extends Controller
   public function CountTopCompany()
   {
     $sql = "
-    SELECT company, price, SUM(price) AS 'Total' FROM orders JOIN products ON orders.prodid = products.id GROUP BY company ORDER BY `price` DESC
+    SELECT company, price, SUM(price) AS 'Total'
+    FROM orders JOIN products ON orders.prodid = products.id
+    GROUP BY company ORDER BY `price` DESC
     ";
     $em = $this->getDoctrine()->getManager();
     $stmt = $em->getConnection()->prepare($sql);
@@ -20,7 +22,8 @@ class adminController extends Controller
   public function CountOrdersWeek()
   {
     $sql = "
-    SELECT COUNT(*) as num FROM orders WHERE date > NOW() - INTERVAL 1 WEEK
+    SELECT COUNT(*) as num FROM orders
+    WHERE date > NOW() - INTERVAL 1 WEEK
     ";
     $em = $this->getDoctrine()->getManager();
     $stmt = $em->getConnection()->prepare($sql);

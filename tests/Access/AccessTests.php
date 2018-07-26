@@ -1,5 +1,6 @@
 <?php
 
+define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/WebsiteWebTestCase.php');
 require_once(__ROOT__.'/TestUtils/Account.php');
 

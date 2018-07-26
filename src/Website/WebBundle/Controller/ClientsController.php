@@ -17,7 +17,11 @@ class ClientsController extends Controller
   public function RetrieveOrders($username)
   {
     $sql = "
-    SELECT * FROM orders JOIN users ON orders.userid = users.id JOIN products ON orders.prodid = products.id JOIN categories ON products.categid = categories.id WHERE users.name ='$username'
+    SELECT * FROM orders
+    JOIN users ON orders.userid = users.id
+    JOIN products ON orders.prodid = products.id
+    JOIN categories ON products.categid = categories.id
+    WHERE users.name ='$username'
     ";
     $em = $this->getDoctrine()->getManager();
     $stmt = $em->getConnection()->prepare($sql);
@@ -27,7 +31,11 @@ class ClientsController extends Controller
   public function CountOrdersWeek($username)
   {
     $sql = "
-    SELECT COUNT(*) as total FROM orders JOIN users ON orders.userid = users.id WHERE users.name ='$username' AND date > NOW() - INTERVAL 1 WEEK
+    SELECT COUNT(*) as total
+    FROM orders
+    JOIN users ON orders.userid = users.id
+    WHERE users.name ='$username'
+    AND date > NOW() - INTERVAL 1 WEEK
     ";
     $em = $this->getDoctrine()->getManager();
     $stmt = $em->getConnection()->prepare($sql);
